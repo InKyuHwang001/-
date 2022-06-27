@@ -1,0 +1,53 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //비교 
+            a=1
+            
+            
+            //비교 연산자
+            
+            //==
+            alert(1==2)             //false
+            alert(1==1)             //true
+            alert("one"=="two")     //false 
+            alert("one"=="one")     //true
+            
+            //===
+            //일치 연산자로 === 좌항과 우항이 '정확'하게 같을 때 true 다르면 false가 된다
+            alert(1=='1');              //true
+            alert(1==='1');             //false
+
+            
+            // ===사용
+            alert(null == undefined);       //true
+            alert(null === undefined);      //false
+            alert(true == 1);               //true
+            alert(true === 1);              //false
+            alert(true == '1');             //true
+            alert(true === '1');            //false
+            
+            alert(0 === -0);                //true
+            alert(NaN === NaN);             //false
+
+
+            //부정과 부등호
+            alert(1!=2);            //true
+            alert(1!=1);            //false
+            alert("one"!="two");    //true
+            alert("one"!="one");    //false
+
+            alert(10>20);   //false
+            alert(10>1);    //true
+            alert(10>10);   //false
+
+            alert(10>=20);      //false
+            alert(10>=1);       //true
+            alert(10>=10);      //true
+
+            // http://dorey.github.io/JavaScript-Equality-Table/ (==과 ===의 차이점)
+        </script>
+    </body>
+</html>

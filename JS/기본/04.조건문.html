@@ -1,0 +1,182 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //조건문 이란
+        ///if
+        if(true){
+            alert('result:true');
+        }
+        
+        if(false){
+            alert('result:true');
+        }
+
+        if(true){
+            alert(1);
+            alert(2);
+            alert(3);
+            alert(4);
+        }
+        alert(5);
+
+        if(false){
+            alert(1);
+            alert(2);
+            alert(3);
+            alert(4);
+        }
+        alert(5);
+
+        ///else
+        if(true){
+            alert(1);
+        } else {
+            alert(2);
+        }
+        if(false){
+            alert(1);
+        } else {
+            alert(2);
+        }
+
+        ///else if
+        if(false){
+            alert(1);
+        } else if(true){
+            alert(2);
+        } else if(true){
+            alert(3);
+        } else {
+            alert(4);
+        }
+        
+        if(false){
+            alert(1);
+        } else if(false){
+            alert(2);
+        } else if(true){
+            alert(3);
+        } else {
+            alert(4);
+        }
+
+        //비교연산자
+        ///기본
+        id=prompt('아이디를 입력해주세요.')
+        if(id=='hwang'){
+            alert('아이디가 일치한다.')
+        } else{
+            alert('아이디가 없다요')
+        }
+        ///조건문의 중첩
+        id=prompt('id give me');
+        if(id=='hwang'){
+            password==prompt('password give me');
+            if(password=='11111'){
+                alert('인증 했습니다.');
+                else{
+                    alert('인증 실패요');
+                }
+            }
+        } else{
+            alert('실패요')
+        }
+
+        //논리 연산자
+        
+        ///&&(and: 좌우모두가 참이면)
+        if(true && true){
+            alert(1);
+        }
+        if(true && false){
+            alert(2);
+        }
+        if(false && true){
+            alert(3);
+        }
+        if(false && false){
+            alert(4);
+        }
+        ////예제
+        id = prompt('아이디를 입력해주세요.');
+        password = prompt('비밀번호를 입력해주세요.');
+        if(id=='hwang' && password=='111111'){
+            alert('인증 했습니다.');
+        } else {
+            alert('인증에 실패 했습니다.');
+        }
+        
+        ///||(or: 좌우항중 하나라도 참이라면)
+        if(true || true){
+            alert(1);
+        }
+        if(true || false){
+            alert(2);
+        }
+        if(false || true){
+            alert(3);
+        }
+        if(false || false){
+            alert(4);
+        }
+        ////예제1
+        id = prompt('아이디를 입력해주세요.');
+        if(id==='hwang' || id==='in' || id==='kyu'){
+            alert('인증 했습니다.');
+        } else {
+            alert('인증에 실패 했습니다.');
+        }
+        ////예제 심화
+        id = prompt('아이디를 입력해주세요.');
+        password = prompt('비밀번호를 입력해주세요.');
+        if((id==='hwang' || id==='in' || id==='kyu') && password==='111111'){
+            alert('인증 했습니다.');
+        } else {
+            alert('인증에 실패 했습니다.');
+        }
+
+        ///!
+        if(!true && !true){
+            alert(1);
+        }
+        if(!false && !true){
+            alert(2);
+        }
+        if(!true && !false){
+            alert(3);
+        }
+        if(!false && !false){
+            alert(4);
+        }
+
+        //boolean의 대체제
+        ///0은 false 1은 tue
+        if(0){
+            alert(1)
+        }
+        if(1){
+            alert(2)
+        }
+
+        ///false로 간주되는 데이터 형태
+        if(!''){
+            alert('빈 문자열')
+        }
+        if(!undefined){
+            alert('undefined');
+        }
+        var a;
+        if(!a){ㄴ
+            alert('값이 할당되지 않은 변수'); 
+        }
+        if(!null){
+            alert('null');
+        }
+        if(!NaN){
+            alert('NaN');
+        }
+        </script>
+    </body>
+</html>
