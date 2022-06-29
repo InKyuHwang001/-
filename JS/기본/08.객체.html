@@ -1,0 +1,45 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //객체
+        `
+        데이터를 담아내는 그릇으로 문자를 쓸 수 있는 것
+        `
+            //객체의 생성
+            var grades = {'hwang': 10, 'in': 6, 'kyu': 80};
+
+            var grades = {};
+            grades['hwang'] = 10;
+            grades['in'] = 6;
+            grades['kyu'] = 80;
+
+            var grades = new Object();
+            grades['hwnag'] = 10;
+            grades['in'] = 6;
+            grades['kyu'] = 80;
+
+            var grades = {'hwang': 10, 'in': 6, 'kyu': 80};
+            alert(grades['kyu']);
+            alert(grades.kyu);
+
+        //객체와 반복문
+
+            var grades = {'hwang': 10, 'in': 6, 'kyu': 80};
+            for(name in grades) {
+                document.write("key : "+name+" value : "+grades[name]+"<br />");}
+        
+        //객체 지향 맛보기
+            var grades = {
+                'list': {'hwang': 10, 'in': 6, 'kyu': 80},
+                'show' : function(){
+                    for(var name in this.list){
+                        document.write(name+':'+this.list[name]+"<br />");
+                    }
+                }
+            };
+            grades.show();
+        </script>
+    </body>
+</html>
