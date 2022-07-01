@@ -1,0 +1,135 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //전역변수 지역변수
+            var vscope='global';
+            function fscope(){
+                alert(vscope);
+            }
+            fscope();//'global'
+
+            var vscope='global';//전역변수
+            function fscope(){
+                var vscope='local'//지역변수
+                var vscope2='local'//지역변수
+                alert(vscope);
+            }
+            fscope();//'local' 
+            alert(vscope2)// 안됨 지역변수는 못끄집어냄
+            
+            var vscope='global';//전역변수
+            function fscope(){
+                var vscope2='local'//지역변수
+                vscope='local'//전역변수를 변환시킴
+                alert(vscope2);
+            }
+            fscope();//'local           
+            alert(vscope)// lacal이 뜸: 전역변수를 부꿨기에
+
+            var vscope='global';//전역변수
+            function fscope(){
+                var vscope='local'//지역변수
+                vscope='local'//지역변수를 우선 변화 시킴
+                alert(vscope);
+            }
+            fscope();//'local
+            alert(vscope)//'global'임 함수 내부의 변수부터 확인함
+        // 변수를 선언할 때는 꼭 var을 붙이는 것을 습관화해야 한다. 전역변수를 사용해야 하는 경우라면 그것을 사용하는 이유를 명확히 알고 있을 때 사용하도록 하자.
+        
+        //유효범위의 효용
+            //지역변수의 사용
+            function a (){
+                var i = 0;
+            }
+            for(var i = 0;//전역변수 
+            i < 5; i++){
+                a();
+                document.write(i);
+            } //01234
+            
+            function a (){
+                i = 0;//전역변수를 변환시키게됨
+            }
+            for(var i = 0; i < 5; i++){
+                a();
+                document.write(i);
+            } //00000000000000000000000000000...무한히
+
+        //전역변수의 사용
+            `
+            불가피하게 전역변수를 사용해야 하는 경우는 
+            하나의 객체를 전역변수로 만들고 객체의 속성으로 변수를 관리하는 방법
+            `
+            MYAPP = {}
+            MYAPP.calculator = {
+                'left' : null,
+                'right' : null
+            }
+            MYAPP.coordinate = {
+                'left' : null,
+                'right' : null
+            }
+            
+            MYAPP.calculator.left = 10;
+            MYAPP.calculator.right = 20;
+            function sum(){
+                return MYAPP.calculator.left + MYAPP.calculator.right;
+            }
+            document.write(sum());
+
+            `
+            전역변수를 사용하고 싶지 않다면 아래와 같이 익명함수를 호출
+            `
+            (function(){
+            var MYAPP = {}
+            MYAPP.calculator = {
+                'left' : null,
+                'right' : null
+            }
+            MYAPP.coordinate = {
+                'left' : null,
+                'right' : null
+            }
+            MYAPP.calculator.left = 10;
+            MYAPP.calculator.right = 20;
+            function sum(){
+                return MYAPP.calculator.left + MYAPP.calculator.right;
+            }
+            document.write(sum());
+            }())
+
+        //유효범위의 대상 (함수)
+            `
+            자바스크립트의 지역변수는 함수에서만 유효하다.
+
+            자바스크립트는 함수에 대한 유효범위만을 제공한다. 
+            많은 언어들이 블록(대체로 {,})에 대한 유효범위를 제공하는 것과 다른 점이다.
+            `
+            for(var i = 0; i < 1; i++){
+                var name = 'coding everybody';
+            }
+            alert(name);
+
+        //정적 유효범위
+            `
+            자바스크립트는 함수가 선언된 시점에서의 유효범위를 갖는다.
+            `
+            var i=5;//전역변수
+
+            function a(){
+                var i=10; //지역변수
+                b();
+            }
+
+            function b(){
+                document.write(i);
+            }
+
+            a();//5  
+            //함수 b가 선언된 시점에서 전역변수를 사용하는 것이다.
+            //사용시점의 변수를 사용하는 것이 아니라 정의시 변수가 중요하다.(정적유효범위라함)
+        </script>
+    </body>
+</html>
