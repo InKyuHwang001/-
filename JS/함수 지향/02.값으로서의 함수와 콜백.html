@@ -1,0 +1,66 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //값으로서의 함수
+            // 객체
+                `
+                JS에서 함수도 객체 즉 일종의 값이다.
+                `
+                function a(){}
+                a={
+                    b: function(){} //b:속성(key 변수의 역활), function(){}: value(메소드라고 부름)
+                };
+
+                function cal(func, num){
+                    return func(num)
+                }
+                function increase(num){
+                    return num+1
+                }
+                function decrease(num){
+                    return num-1
+                }
+                alert(cal(increase, 1));//2 1+1
+                alert(cal(decrease, 1));
+
+            // 리턴값
+                function cal(mode){
+                    var funcs = {
+                        'plus' : function(left, right){return left + right},
+                        'minus' : function(left, right){return left - right}
+                    }
+                    return funcs[mode];
+                }
+                alert(cal('plus')(2,1));
+                alert(cal('minus')(2,1));   
+
+            //배열
+                var process = [
+                    function(input){ return input + 10;},
+                    function(input){ return input * input;},
+                    function(input){ return input / 2;}
+                ];
+                var input = 1;
+                for(var i = 0; i < process.length; i++){
+                    input = process[i](input);
+                }
+                alert(input);
+        //콜백
+            //처리의 위임
+                function sortNumber(a,b){
+                    // 위의 예제와 비교해서 a와 b의 순서를 바꾸면 정렬순서가 반대가 된다.
+                    return b-a;
+                }
+                var numbers = [20, 10, 9,8,7,6,5,4,3,2,1];
+                alert(numbers.sort(sortNumber)); // array, [20,10,9,8,7,6,5,4,3,2,1]
+
+            //비동기 처리
+                `
+                시간이 오래걸리는 작업이 있을 때 이 작업이 완료된 후에 
+                처리해야 할 일을 콜백으로 지정하면 해당 작업이 끝났을 때 미리 등록한 작업을 실행하도록 할 수 있다.  
+                `
+        </script>
+    </body>
+</html>
