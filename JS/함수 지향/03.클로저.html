@@ -1,0 +1,105 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //클로저
+            `
+            내부함수가 외부함수의 맥락(context)에 접근할 수 있는 것
+            `
+            //내부함수
+            function outter(){//외부함수
+                function inner(){//내부함수
+                    var title = 'coding everybody'; 
+                    alert(title);
+                }
+                inner();
+            }
+            outter();
+
+            function outter(){
+                var title = 'coding everybody';  //외부함수의 지역변수
+                function inner(){        
+                    alert(title);
+                }
+                inner();
+            }
+            outter();
+
+            function outter(){
+                var title = 'coding everybody';  
+                return function(){        
+                    alert(title);
+                }
+            }
+            inner = outter();
+            inner();//coding everybody
+        
+        //private variable(실용적 예제)
+            function factory_movie(title){
+                return {
+                    get_title : function (){
+                        return title;
+                    },
+                    set_title : function(_title){
+                        title = _title
+                    }
+                }
+            }
+            ghost = factory_movie('Ghost in the shell');
+            matrix = factory_movie('Matrix');
+            
+            alert(ghost.get_title());//Ghost in the shell
+            alert(matrix.get_title());//Matrix
+            
+            ghost.set_title('공각기동대');
+            
+            alert(ghost.get_title());//공각기동대
+            alert(matrix.get_title());//Matrix
+            `
+            1. 클로저는 객체의 메소드에서도 사용할 수
+            2. 동일한 외부함수 안에서 만들어진 내부함수나 메소드는 외부함수의 지역변수를 공유
+            3. 똑같은 외부함수 factory_movie를 공유하고 있는 ghost와 matrix의 get_title의 결과는 서로 각각 다르다. 
+            외부함수가 실행될 때마다 새로운 지역변수를 포함하는 클로저가 생성되기 때문에 ghost와 matrix는 서로 완전히 독립된 객체
+            4.title의 값을 읽고 수정 할 수 있는 것은 factory_movie 메소드를 통해서 만들어진 객체 뿐
+            `
+        //클로저 관련 실수
+            //잘못된 코드
+            var arr=[]
+            for(var i=0; i<5; i++){
+                arr[i]=function(){
+                    return i;
+                }
+            }
+            for(var index in arr){
+                console.log(arr[index]());
+            }
+            `
+            5
+            5
+            5
+            5
+            5
+            `
+            //수정한 코드
+            var arr = []
+            for(var i = 0; i < 5; i++){
+                arr[i] = function(id) {
+                    return function(){
+                        return id;
+                    }
+                }(i);
+            }
+            for(var index in arr) {
+                console.log(arr[index]());
+            }
+            `
+            0
+            1
+            2
+            3
+            4
+            `
+        </script>
+    </body>
+</html>
