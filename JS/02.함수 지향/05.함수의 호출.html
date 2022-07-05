@@ -1,0 +1,33 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //함수의 호출
+        `
+        객체는 속송성을 갖고
+        값이 저장되면 속성
+        함수를 가지면 메소드
+        `
+        function sum(arg1, arg2){
+            return arg1+arg2;
+        }
+        alert(sum.apply(null, [1,2]))//3
+        alert(sum.apply(null, [4,2]))//6
+
+        //apply의 사용
+        o1 = {val1:1, val2:2, val3:3}
+        o2 = {v1:10, v2:50, v3:100, v4:25}
+        function sum(){
+            var _sum = 0;
+            for(name in this){  //this
+                _sum += this[name];
+            }
+            return _sum;
+        }
+        alert(sum.apply(o1)) // 6
+        //this 가 o1임 
+        alert(sum.apply(o2)) // 185
+        </script>
+    </body>
+</html>
