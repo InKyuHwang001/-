@@ -1,0 +1,37 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //전역객체란
+            `
+            전역객체(Global object)는 특수한 객체다. 
+            모든 객체는 이 전역객체의 프로퍼티다. 
+            `
+            function fun(){
+                alert('hi');
+            }
+            func();
+            window.func();
+            `
+            func();와 window.func();는 모두 실행이 된다. 
+            모든 전역변수와 함수는 사실 window 객체의 프로퍼티다.
+            객체를 명시하지 않으면 암시적으로 window의 프로퍼티로 간주된다. 
+            `
+
+            var o={'func':function(){
+                alert('hi');
+            }}
+            o.func();
+            window.o.func();
+            `
+            자바스크립트에서 모든 객체는 기본적으로 전역객체의 프로퍼티임을 알 수 있다. 
+            `
+
+            //전역객체 API
+            `
+            ECMAScript에서는 전역객체의 API를 정의해두었다.
+            `
+        </script>
+    </body>
+</html>

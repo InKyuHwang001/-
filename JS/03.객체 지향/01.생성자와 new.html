@@ -1,0 +1,83 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //소개
+            `
+            Prototype-Based Programming
+            `
+        //객체 생성
+            `
+            객체란 서로 연결된 변수와 함수를 그룹핑한 그릇이다.
+            객체내에서
+                변수= 프로퍼티
+                함수= 메소드
+            `
+            //방법1
+                var person={}
+                person.name='hwang';
+                person.introduce=function(){
+                    return 'My name is'+ this.name;
+                }
+                document.write(person.introduce());
+            //방법2
+                var person = {
+                    'name' : 'hwang',
+                    'introduce' : function(){
+                        return 'My name is '+this.name;
+                    }
+                }
+                document.write(person.introduce());
+        //생성자와 new
+            `
+            다른 사람의 이름을 담을 객체가 필요하다면 객체의 정의를 반복
+
+            생성자 = 객체의 구조를 재활용할 수 있는 방법
+                   = 생성자(constructor)는 객체를 만드는 역할을 하는 함수 
+            `
+            //생성자 만들기
+                function Person(){} //생성자 함수는 일반함수와 구분하기 위해서 첫글자를 대문자
+                var p = new Person();//함수를 호출할 때 new을 붙이면 새로운 객체를 만든 후에 이를 리턴한다
+                p.name='hwang';
+                p.introduce=function(){
+                    return 'My name is '+this.name;
+                }
+                document.write(p.introduce());
+            
+            //중복이 발생
+                function Person(){}
+                var p1 = new Person();
+                p1.name = 'hwang';
+                p1.introduce = function(){//중복이 생긴 부분(낭비 극혐)
+                    return 'My name is '+this.name; //중복이 생긴 부분(낭비 극혐)
+                }
+                document.write(p1.introduce()+"<br />");
+                
+                var p2 = new Person();
+                p2.name = 'lee';
+                p2.introduce = function(){//중복이 생긴 부분(낭비 극혐)
+                    return 'My name is '+this.name; //중복이 생긴 부분(낭비 극혐)
+                }
+                document.write(p2.introduce());
+            
+            //중복의 해결
+                function Person(name){ //생성자가 초기화 한다.
+                    this.name = name;
+                    this.introduce = function(){    //간결해진 부분
+                        return 'My name is '+this.name; 
+                    }   
+                }
+                var p1 = new Person('hwang');
+                document.write(p1.introduce()+"<br />");
+                
+                var p2 = new Person('lee');
+                document.write(p2.introduce());
+            //자바스크립트 생성자의 특징'
+                `
+                객체지향 언어에서 생성자는 클래스의 소속
+                but, 자바스크립트에서 객체를 만드는 주체는 함수다.
+                `
+        </script>
+    </body>
+</html>
