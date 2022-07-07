@@ -1,0 +1,74 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //함수와 this
+            `
+            this는 함수 내에서 함수 호출 맥락(context)를 의미
+            
+            함수와 객체의 관계가 느슨한 자바스크립트에서 this는 이 둘을 연결시켜주는 실질적인 연결점
+            `
+        
+            //함수 호출
+                function fun(){
+                    if(window === this){
+                        console.log('window===this')
+                    }
+                }// this는 전역객체인 window와 같다
+                func();//window === this
+
+            //메소드 호출
+                var o = {
+                    func : function(){
+                        if(o === this){
+                            document.write("o === this");
+                        }
+                    }
+                }
+                o.func();//o === this  
+            
+            //생성자의 호출   
+                var funcThis=null;
+                
+                function Func(){
+                    funcThis=this;
+                }
+
+                var o1 = Func();
+                if(funcThis === window){
+                    document.write('window <br />');
+                }//window
+                
+                var o2 = new Func();
+                if(funcThis === o2){
+                    document.write('o2 <br />');
+                }//o2
+
+                function Func(){
+                    document.write(o);
+                }
+                var o = new Func();//undefined
+
+            //apply와 this
+                var o = {}
+                var p = {}
+                function func(){
+                    switch(this){
+                        case o:
+                            document.write('o<br />');
+                            break;
+                        case p:
+                            document.write('p<br />');
+                            break;
+                        case window:
+                            document.write('window<br />');
+                            break;          
+                    }
+                }
+                func();//window
+                func.apply(o);//o
+                func.apply(p);//p
+        </script>
+    </body>
+</html>
