@@ -1,0 +1,86 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //상속이란
+            `
+            상속은 객체의 로직을 그대로 물려 받는 또 다른 객체를 만들 수 있는 기능을 의미
+            기존의 로직을 수정하고 변경해서 파생된 새로운 객체를 만들 수
+            `
+            function Person(name){
+                this.name = name;
+                this.introduce = function(){
+                    return 'My name is '+this.name; 
+                }   
+            }
+            var p1 = new Person('hwang');
+            document.write(p1.introduce()+"<br />");// My name is hwang
+            //변경
+            function Person(name){
+                this.name = name;
+            }
+            Person.prototype.name=null;
+            Person.prototype.introduce = function(){
+                return 'My name is '+this.name; 
+            }
+            var p1 = new Person('hwang');
+            document.write(p1.introduce()+"<br />");
+
+        //상속의 사용 방법
+            function Person(name){
+                this.name = name;
+            }
+            Person.prototype.name=null;
+            Person.prototype.introduce = function(){
+                return 'My name is '+this.name; 
+            }
+            
+            function Programmer(name){
+                this.name = name;
+            }
+            Programmer.prototype = new Person();
+            
+            var p1 = new Programmer('hwang');
+            document.write(p1.introduce()+"<br />");//My name is hwang
+
+        //기능의 추가
+            function Person(name){
+                this.name = name;
+            }
+            Person.prototype.name=null;
+            Person.prototype.introduce = function(){
+                return 'My name is '+this.name; 
+            }
+            
+            function Programmer(name){
+                this.name = name;
+            }
+            Programmer.prototype = new Person();
+                //추가 부분
+            Programmer.prototype.coding = function(){
+                return "hello world";
+            }
+            
+            function Designer(name){
+                this.name = name;
+            }
+            Designer.prototype= new Person();
+            Designer.prototype.design=function(){
+                return 'art';
+            }
+
+            var p1 = new Programmer('hwang');
+            document.write(p1.introduce()+"<br />");
+            document.write(p1.coding()+"<br />");
+
+            var p2 = new Designer('lee');
+            document.write(p2.introduce()+"<br />");
+            document.write(p2.design()+"<br />");
+
+            `
+            Person에 Designer, Programmer을 가지고 있다.
+            `
+            </script>
+    </body>
+</html>
