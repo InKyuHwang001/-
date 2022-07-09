@@ -1,0 +1,53 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //Object란?
+            `
+            Object 객체는 객체의 가장 기본적인 형태를 가지고 있는 객체이다.
+                          아무것도 상속받지 않는 순수한 객체
+                          자바스크립트의 모든 객체는 Object 객체를 상속 받는데, 그런 이유로 모든 객체는 Object 객체의 프로퍼티를 가지고 있다.
+            `
+            var grades = {'egoing': 10, 'k8805': 6, 'sorialgi': 80};
+
+        //Object API 사용법
+            `
+            Object 객체를 확장하면 모든 객체가 접근할 수 있는 API를 만들 수
+            https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object
+            `
+
+        //Object 확장
+        
+            Object.prototype.contain = function(neddle) {
+                for(var name in this){
+                    if(this[name] === neddle){
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            var o = {'name':'hwang', 'city':'seoul'}
+            console.log(o.contain('hwang'));//true
+            var a = ['hwang','lee','grapittie'];
+            console.log(a.contain('lee'));//true
+
+            //확장의 위험
+                `
+                object 객체의 확장을 지양하는 이유=모든 객체에 영향을 주기 때문이다
+                `
+                for(var name in o){
+                    console.log(name);  
+                }
+
+                //name
+                //contain 이 나옴
+
+                for(var name in o){
+                    if(o.hasOwnProperty(name))
+                        console.log(name);
+                }//false
+        </script>
+    </body>
+</html>

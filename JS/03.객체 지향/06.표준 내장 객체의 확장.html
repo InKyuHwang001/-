@@ -1,0 +1,43 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //표준 내장 객체의 확장
+            `
+            표준 내장 객체(Standard Built-in Object)는 JS가 가진 객체들
+                기본적으로 필요한 도구여서 중요
+
+                Object
+                Function
+                Array
+                String
+                Boolean
+                Number
+                Math
+                Date
+                RegExp(정규표현식)
+            
+            사용자 정의 객체와 대비됨
+            `
+        //배열의 확장
+            var arr = new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+            function getRandomValueFromArray(haystack){
+                var index= Math.floor(haystack.length*Math.random());//floor: 내림
+                return haystack[index];
+            }
+            console.log(getRandomValueFromArray(arr));
+            `
+            잘못 작성한 것은 아니나 세련된 방법은 함수를 배열 객체에 포함시키는 것이다.
+            배열에 내장된 메소드인 것처럼 위의 기능을 사용할 수 있다.
+            `
+
+            Array.prototype.rand= function(){
+                var index= Math.floor(this.length*Math.random());
+                return this[index];
+            }
+            var arr= new Array('seoul','new york','ladarkh','pusan', 'Tsukuba');
+            console.log(arr.rand());
+        </script>
+    </body>
+</html>
