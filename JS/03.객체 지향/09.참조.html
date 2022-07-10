@@ -1,0 +1,69 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //복제란?
+            `
+            원시 데이터 타입인 경우
+
+            복제는 비용이 들지 않기에 중요한 특징이 되었다.
+            
+            별도의 데이터 만들기
+            `
+            var a=1;
+            var b=a;
+            b=2;
+            console.log(a);//1
+
+        //참조란?
+            `
+            원시데이터 타입이 아닌 경우
+
+            동일한 대상을 바라보는 것
+
+            하나를 바꾸면 다른 것도 바뀌는 것
+            `
+            var a={'id':1};
+            var b=a;
+            b.id=2;
+            console.log(a.id);//2
+
+            var a={'id':1};
+            var b=a;
+            b={'id':2}//새로운 객체를 할당하는 행위
+            console.log(a.id);//1
+
+        //함수와 참조
+            var a = 1;
+            function func(b){
+                b = 2;
+            }//b=a다라는 선언과 b=2라는 선언의 조합 
+            func(a);//2
+            console.log(a);//1
+
+            var a={'id':1};
+            function func(b){
+                b={'id':2};
+            }
+            func(a);
+            console.log(a.id);//1
+            `
+            함수 func의 파라미터 b로 전달된 값은 객체 a이다. 
+            (b = a) b를 새로운 객체로 대체하는 것은 (b = {'id':2}) 
+            b가 가르키는 객체를 변경하는 것이기 때문에 객체 a에 영향을 주지 않는다.
+            `
+            var a = {'id':1};
+            function func(b){
+                b.id = 2;
+            }
+            func(a);
+            console.log(a.id);  // 2
+            `
+            파라미터 b는 객체 a의 레퍼런스다. 
+            이 값의 속성을 바꾸면 그 속성이 소속된 객체를 대상으로 
+            수정작업을 한 것이 되기 때문에 b의 변경은 a에도 영향을 미치게 된다. 
+            `
+        </script>
+    </body>
+</html>
