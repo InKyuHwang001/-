@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>폼 요소 1</title>
+        <!-- 데이터를 서버에 전달-->
+    </head>
+    <body>
+        <form action="./test.html">
+            <!-- type="text"-->
+            ID: <input type="text" placeholder="입력시 사라짐"><br>
+            <!-- type="password"-->
+            PS: <input type="password"><br>
+            <!-- type="radio"-->
+            <input type="radio" name="gender" checked> 남자
+            <input type="radio" name="gender"> 여자<br>
+
+            <input type="radio" name="maples" checked> 혐잉
+            <input type="radio" name="maples"> 아잉<br>
+
+            <!-- type="radio"-->
+            <input type="checkbox" name="hobby" checked> 게임
+            <input type="checkbox" name="hobby"> 독서
+            <input type="checkbox" name="hobby"> 운동<br>
+
+            <!-- type="file"-->
+            프로필사진 업로드: <input type="file"><br>
+            <!-- select-->
+            사는 지역
+            <select>
+                <option>서울</option>
+                <option selected>경기</option>
+                <option>강원</option>
+            </select><br>
+            <!-- textarea-->
+            자기소개
+            <textarea cols="30" rows="5"></textarea><br>
+            <!-- button-->
+            <button type="submit">전송</button><br>
+            <button type="reset">취소</button><br>
+
+            <!-- 
+                type="submit,reset,image,button" 
+            -->
+            <input type="submit" value="전송"><br>
+            <input type="reset" value="취소"><br>
+            <input type="image" src="https://jjalbang.today/files/jjalboxthumb/2015/04/102_3046.jpg" alt="click" width="50" height="50"><br>
+            <input type="button" value="등록"><br>
+        </form>
+    </body>
+</html>

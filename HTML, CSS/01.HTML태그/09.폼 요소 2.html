@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>폼 요소 2</title>
+        <!-- 
+            label 웹 접근성 향상에 영향
+        -->
+        <!-- 
+            <fieldset>, <legend>
+                <fieldset> : 여러 개의 폼 요소를 그룹화하여 구조적으로 만들기 위해 사용
+                <legend> : 폼 요소의 제목으로 <fieldset> 내부에 작성
+        -->
+        <!-- form
+            action: 데이터를 처리하기 위한 서버의 주소
+            method: 데이터를 전송하는 방식을 지정
+                post 방식은 데이터가 전송될 때 데이터가 노출되지 않습니다.
+                get 방식은 데이터가 전송될 때 주소창에 파라미터 형태로 붙어 데이터가 노출됨
+
+        -->
+    </head>
+    <body>
+        <!--form-->
+        <form action="./test.html">
+            <fieldset>
+                <legend>기본정보</legend>
+                <!-- type="text"-->
+                <label for='userid'>ID:</label> <input type="text" placeholder="입력시 사라            <!-- type="password"-->
+                <label for="userps">PS:</label> <input type="password"><br>
+                <!-- type="radio"-->
+                성별:
+                <label for='usermale'>남자</label> <input type="radio" name="gender" id="usermale" checked> 
+                <label for='userfemale'>여자</label> <input type="radio" name="gender" id="userfemale"> <br>
+
+                <input type="radio" name="maples" checked> 혐잉
+                <input type="radio" name="maples"> 아잉<br>
+            </fieldset>
+            <fieldset>
+                <legend>부가정보</legend>
+                <!-- type="radio"-->
+                <input type="checkbox" name="hobby" checked> 게임
+                <input type="checkbox" name="hobby"> 독서
+                <input type="checkbox" name="hobby"> 운동<br>
+
+                <!-- type="file"-->
+                프로필사진 업로드: <input type="file"><br>
+                <!-- select-->
+                사는 지역
+                <select>
+                    <option>서울</option>
+                    <option selected>경기</option>
+                    <option>강원</option>
+                </select><br>
+                <!-- textarea-->
+                자기소개
+                <textarea cols="30" rows="5"></textarea><br>
+                <!-- button-->
+                <button type="submit">전송</button><br>
+                <button type="reset">취소</button><br>                
+            </fieldset>
+            <!-- 
+                type="submit,reset,image,button" 
+            -->
+            <input type="submit" value="전송"><br>
+            <input type="reset" value="취소"><br>
+            <input type="image" src="https://jjalbang.today/files/jjalboxthumb/2015/04/102_3046.jpg" alt="click" width="50" height="50"><br>
+            <input type="button" value="등록"><br>
+        </form>
+    </body>
+</html>

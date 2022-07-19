@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>테이블 요소</title>
+        <style>
+            th, td { border: 1px solid; }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table>
+                <caption>Monthly Savings</caption>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>February</td>
+                        <td>$80</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Sum</td>
+                        <td>$180</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div>
+            <table>
+                <caption>Specification values</caption>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Grade.</th>
+                        <th rowspan="2">Point.</th>
+                        <th colspan="2">Strength.</th>
+                        <th rowspan="2">Percent.</th>
+                        </tr>
+                    <tr>
+                        <th>kg/mm</th>
+                        <th>lb/in</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hard</td>
+                        <td>0.45</td>
+                        <td>56.2</td>
+                        <td>80,000</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Medium</td>
+                        <td>0.45</td>
+                        <td>49.2</td>
+                        <td>70,000</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Soft</td>
+                        <td>0.45</td>
+                        <td>42.2</td>
+                        <td>60,000</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
+<!--
+    <table> : 표를 나타내는 태그
+    <tr> : 행을 나타내는 태그
+    <th> : 제목 셀을 나타내는 태그
+    <td> : 셀을 나타내는 태그
+-->
+
+<!--
+    표의 구조와 관련된 태그
+
+    <caption>: 표의 제목을 나타내는 태그
+    <thead>: 제목 행을 그룹화하는 태그
+    <tbody>: 본문 행을 그룹화하는 태그
+    <tfoot>: 바닥 행을 그룹화하는 태그
+-->
