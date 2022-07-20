@@ -1,0 +1,27 @@
+/* 선택자*/
+
+h1, h2, h3, h4, h5, h6 { color: yellow; }
+
+
+/*
+ * { color: yellow; } 
+ */ /* 성능이 낮음*/
+
+p
+{ color: yellow; 
+    font-size: 2em; 
+    background-color: gray; 
+}
+
+.html { color: purple; }
+.css { text-decoration: underline; }
+
+#bar
+{
+    background-color: aqua;
+    color:black;
+}
+
+.html.css { 
+    visibility: hidden;
+}

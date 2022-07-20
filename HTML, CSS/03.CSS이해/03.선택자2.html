@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title >선택자 조합</title>
+        <style>
+            p[class] { color: silver; }
+            p[class][id] { text-decoration: underline; }
+            p[class="foo"] { color: darkcyan; }
+            p[id="title"] { text-decoration: underline; }
+
+            p[class~="color"] { font-style: italic; }
+            p[class^="color"] { font-style: italic; }
+            p[class$="color"] { font-style: italic; }
+            p[class*="color"] { font-style: italic; }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p class="foo">Hello</p>
+            <p class="bar">CSS</p>
+            <p class="baz" id="title">HTML</p>
+        </div>
+
+        <div>
+            <p class="color hot">red</p>
+            <p class="cool color">blue</p>
+            <p class="colorful nature">rainbow</p>
+        </div>
+    </body>
+</html>
