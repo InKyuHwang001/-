@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>문서 구조 관련 선택자</title>
+        <style>
+            div span { color: blue; }
+            div>span {color: red}
+            div + p { color: skyblue; }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1><span>부모 자식 요소</span></h1>
+            <P>부모 요소는 그 요소를 포함하는 가장 가까운 상위 요소로, 그 요소의 부모 요소는 단 하나뿐입니다.
+
+            자식 요소는 부모 요소와 반대라고 생각하면 되며 자식 요소는 여러 개일 수도 있습니다.</P>
+        </div>
+        <div>
+            <div>
+            <h1><span>인접 형제 선택자</span></h1>
+            </div>
+            <P>부모 요소는 그 요소를 포함하는 가장 가까운 상위 요소로, 그 요소의 부모 요소는 단 하나뿐입니다.
+
+            자식 요소는 부모 요소와 반대라고 생각하면 되며 자식 요소는 여러 개일 수도 있습니다.</P>
+        </div>
+    </body>
+</html>
