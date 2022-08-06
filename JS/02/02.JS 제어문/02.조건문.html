@@ -1,0 +1,51 @@
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title></title>
+    </head>
+    <body>
+          <h1>조건문</h1>
+          <h2>개념</h2>
+          <script>
+               document.write('1')
+               if(true) {
+                 document.write('2')
+               }
+               else {
+               document.write('3')
+               }
+               if(false) {
+               document.write('4')
+               }
+               else {
+               document.write('5')
+               }
+               document.write('6')
+          </script>
+          <h2>활용</h2>
+          <input id="night_day" type="button" value="night" onclick="
+               if(document.querySelector('#night_day').value === 'night') {
+                    document.querySelector('body').style.backgroundColor = 'black';
+                    document.querySelector('body').style.color = 'white';
+                    document.querySelector('#night_day').value = 'day';
+               }
+               else {
+                    document.querySelector('body').style.backgroundColor = 'white';
+                    document.querySelector('body').style.color = 'black';
+                    document.querySelector('#night_day').value = 'night';
+          }">
+          <h2>리팩토링-this 사용</h2>
+          <input type="button" value="night" onclick="
+               var target=document.querySelector('body')
+               if(this.querySelector('#night_day').value === 'night') {
+                    target.style.backgroundColor = 'black';
+                    target.querySelector('body').style.color = 'white';
+                    target.querySelector('#night_day').value = 'day';
+               }
+               else {
+                    target.querySelector('body').style.backgroundColor = 'white';
+                    target.querySelector('body').style.color = 'black';
+                    target.querySelector('#night_day').value = 'night';
+          }">
+    </body>
+</html>
