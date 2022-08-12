@@ -10,7 +10,7 @@ class Accounting{
     public static double getVAT() {
         return valueOfSupply * vatRate;
     }
-     
+      
     public static double getTotal() {
         return valueOfSupply + getVAT();
     }
