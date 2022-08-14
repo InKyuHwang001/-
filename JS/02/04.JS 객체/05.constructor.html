@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title></title>
+          <script>
+          </script>
+    </head>
+    <body>
+         <h1>
+            constructor
+         </h1>
+         <h2>constructor의 필요성</h2>
+         <script>
+            var hwang = {
+                name: 'hwang',
+                first: 10, //첫번째 게임 점수
+                second: 20,  // 두번째 게임 점수 
+                sum:function(){ // 게임 접수 합계 함수
+                    return this.first+this.second;
+                }
+            }
+
+            var kim = {
+                name: 'kim',
+                first: 10, //첫번째 게임 점수
+                second: 20,  // 두번째 게임 점수 
+                sum:function(){ // 게임 접수 합계 함수
+                    return this.first+this.second;
+                }
+            }
+
+            console.log("hwang.sum()",hwang.sum());
+            console.log("kim.sum()",kim.sum());
+            //1억개면 힘듬 그래서 객체의 양산이 필요
+        </script>
+        <h2>생성자</h2>
+        <script>
+            function Person(name,first,second,third){
+                this.name = name;
+                this.first = first;
+                this.second = second;
+                this.third = third;
+                this.sum = function(){ 
+                    return this.first+this.second+this.third;
+                }
+            }
+
+            var kim = new Person('kim',10,20,30);
+            var lee = new Person('lee',10,10,10);
+         </script>
+    </body>
+</html>

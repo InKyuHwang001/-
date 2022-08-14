@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title></title>
+          <script>
+          </script>
+    </head>
+    <body>
+         <h1>
+            prototype
+         </h1>
+         <h2>prototype의 필요성</h2>
+         <p> 자바스크립트를 Prototype based language라고도 한다.</p>
+         <script>
+            function Person(name,first,second,third){
+                this.name = name;
+                this.first = first;
+                this.second = second;
+                this.third = third;
+                this.sum = function(){ 
+                    return this.first+this.second+this.third;
+                }
+            }
+            //this.sum이 항상 생성되는데 이건 낭비요
+        </script>
+        <h2>prototype이용</h2>
+        <script>
+            function Person(name,first,second,third){
+                this.name = name;
+                this.first = first;
+                this.second = second;
+                this.third = third;
+            }
+
+            Person.prototype.sum= function(){ 
+                return this.first+this.second+this.third;
+            }
+            //한번만 정의하여 성능 향상됨
+            var kim = new Person('kim',10,20,30);
+            var lee = new Person('lee',10,10,10);
+            console.log("kim.sum()",kim.sum());
+            console.log("lee.sum()",lee.sum());
+        </script>
+    </body>
+</html>

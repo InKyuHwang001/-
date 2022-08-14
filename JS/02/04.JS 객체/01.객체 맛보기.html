@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title></title>
+          <script>
+          </script>
+    </head>
+    <body>
+         <h1>
+            Object
+         </h1>
+         <h2>데이터 쓰기 읽기 수정</h2>
+         <script>
+            var coworkers={
+                "programer": "hwang",
+                "designer": "inkyu"
+            };
+            document.write(coworkers.programer);
+            document.write(coworkers.designer);
+            coworkers.bookepers="ma";
+            coworkers["data scientist"]= "hwangin";
+            document.write(coworkers["data scientist"]);
+            coworkers.programer="Hwang"
+         </script>
+         <h2>객체의 순회</h2>
+         <script>
+            var coworkers={
+                "programer": "hwang",
+                "designer": "inkyu"
+            };
+            coworkers.bookepers="ma";
+            coworkers["data scientist"]= "hwangin";
+
+            for(var key in coworkers){
+                document.write(key+"<br>");
+            }
+
+            for(var key in coworkers){
+                document.write(coworkers[key]+"<br>")
+            }
+         </script>
+
+        <h2>property and method</h2>
+        <script>
+            var coworkers={
+                "programer": "hwang",
+                "designer": "inkyu"
+            };
+            coworkers.bookepers="ma";
+            coworkers["data scientist"]= "hwangin";
+            coworkers.showAll=function(){       
+                for (var key in this) {
+                    document.write(key + ' : ' + this[key] + '<br>');
+                }            
+            }
+        </script>
+    </body>
+</html>

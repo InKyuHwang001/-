@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title></title>
+          <script>
+          </script>
+    </head>
+    <body>
+         <h1>
+            this?
+         </h1>
+         <p>
+            객체란 서로 연관된 변수와 함수를 그룹화하여 이름을 붙인 것이고
+            <br>
+            프로그래밍에서도 자기 자신을 가리키는 표현이 this 이다.
+         </p>
+         <script>
+            var hwang = {
+                name: 'hwang',
+                first: 10, //첫번째 게임 점수
+                second: 20,  // 두번째 게임 점수 
+                sum:function(){ // 게임 접수 합계 함수
+                    return this.first+this.second;
+                }
+            }
+
+            console.log("hwang.sum()",hwang.sum());
+        </script>
+    </body>
+</html>

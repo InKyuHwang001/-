@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+          <meta charset="utf-8">
+          <title></title>
+          <script>
+          </script>
+    </head>
+    <body>
+         <h1>
+            객체기본
+         </h1>
+         <h2>객체 생성</h2>
+         <script>
+            var memberArray = ['hwang', 'in', 'kyu'];
+            //배열에서는 값에 접근할 때 []를 사용한다.
+            console.log("memberArray[2]", memberArray[2]);
+            //각각의 데이터가 어떤 데이터인지를 풍부하게 설명해야하는 경우는 객체를 사용하게된다.
+            var memberObject={
+                //원소의 이름: 원소의 값
+                manager:'hwang',
+                developer:'in',
+                designer:'kyu'
+            }
+            //객체에서는 값에 접근할 때 .를 사용한다.
+            memberObject.designer = 'Kyu';
+            console.log('memberObject.designer', memberObject.designer);
+            //[]를 이용해 접근할 수도 있다.
+            console.log("memberObject.['designer']", memberObject['designer']);
+        </script>
+        <h2>객체의 수정</h2>
+        <script>
+            var memberObject={
+                //원소의 이름: 원소의 값
+                manager:'hwang',
+                developer:'in',
+                designer:'kyu'
+            }
+            memberObject.designer = 'Kyu';
+         </script>
+
+        <h2>객체 삭제</h2>
+        <script>
+            var memberObject={
+                //원소의 이름: 원소의 값
+                manager:'hwang',
+                developer:'in',
+                designer:'kyu'
+            }
+            delete memberObject.manager
+            console.log('after delete memberObject.manager', memberObject.manager);
+        </script>
+    </body>
+</html>
