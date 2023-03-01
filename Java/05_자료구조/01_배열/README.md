@@ -1,7 +1,9 @@
-# 자료구조
+# 배열
 ---
 
 - [배열](##배열)
+- [2차원배열](##2차원배열)
+- [ArrayList](##ArrayList)
 
 ---
 
@@ -12,6 +14,9 @@
 - 동일한 자료형의 순차적 자료 구조
 - 인뎃스 연산자[]를 이용 -> 빠른 참조
 - 물리적 논리적 위치가 동일
+- 정해진 크기가 있음
+- **요소의 추가와 제거시 다른 요소들의 이동이 필요**
+- ArrayList, Vector
 
 ### 선언과 초기화
 
@@ -35,7 +40,7 @@ int[] ids;
 ids = new int[] {10, 20, 30};            // 선언후 배열을 생성하는 경우는 new int[] 생략할 수 없음
 ```
 
-### 배열의 길이와 ㅇ소의 개수는 동일하지 않음
+### 배열의 길이와 원소의 개수는 동일하지 않음
 
 - 100개를 선언하고 50개만 사용
 
@@ -97,3 +102,40 @@ public class CharArrayTest {
 }
 ```
 
+---
+
+## 2차원배열
+
+```java
+int[][] arr = new int[2][4];
+
+
+public class TwoDimensionTest {
+
+	public static void main(String[] args) {
+		int[][] arr = { {1,2,3}, {4,5,6,7}};
+		int i, j;
+		
+		for(i =0; i<arr.length; i++) {
+			for(j=0; j<arr[i].length; j++) {
+				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println(", \t" + arr[i].length);
+			System.out.println();
+		}
+	}
+}
+
+```
+
+---
+
+## ArrayList
+
+### 주요 메서드
+
+- .add()
+- .size()
+- .get(int index)
+- .remove(int index)
+- .isEmpty()
