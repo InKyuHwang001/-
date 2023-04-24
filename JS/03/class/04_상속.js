@@ -85,4 +85,4 @@ console.log(b instanceof C);
 
 console.log(c.constructor === A); //false
 console.log(c.constructor === B); //false
-console.log(c.constructor === C);b //true
+console.log(c.constructor === C); //true
